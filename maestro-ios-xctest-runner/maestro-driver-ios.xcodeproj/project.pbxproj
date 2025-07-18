@@ -996,6 +996,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					/System/Developer/Library/Frameworks,
+					/Developer/Library/PrivateFrameworks,
+					/Developer/Library/Frameworks,
+					/System/Developer/Library/PrivateFrameworks,
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.mobile.maestro-driver-ios";
@@ -1025,6 +1029,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					/System/Developer/Library/Frameworks,
+					/Developer/Library/PrivateFrameworks,
+					/Developer/Library/Frameworks,
+					/System/Developer/Library/PrivateFrameworks,
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.mobile.maestro-driver-ios";

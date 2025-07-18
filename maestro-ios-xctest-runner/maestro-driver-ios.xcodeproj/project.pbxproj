@@ -708,7 +708,6 @@
 					52049BF2293503A200807AA3 = {
 						CreatedOnToolsVersion = 13.4.1;
 						LastSwiftMigration = 1620;
-						TestTargetID = 52049BD22935039F00807AA3;
 					};
 				};
 			};
@@ -1060,12 +1059,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.mobile.maestro-driver-iosUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "maestro-driver-iosUITests/Categories/maestro-driver-iosUITests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "maestro-driver-ios";
 			};
 			name = Debug;
 		};
@@ -1086,11 +1085,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.mobile.maestro-driver-iosUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "maestro-driver-iosUITests/Categories/maestro-driver-iosUITests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "maestro-driver-ios";
 			};
 			name = Release;
 		};

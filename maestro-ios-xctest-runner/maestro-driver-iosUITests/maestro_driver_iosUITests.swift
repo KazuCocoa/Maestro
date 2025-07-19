@@ -2,19 +2,7 @@ import XCTest
 import FlyingFox
 import os
 
-class FailureResistantTestCase: XCTestCase {
-  override func setUp() {
-    super.setUp()
-    continueAfterFailure = true
-  }
-
-  override func record(_ issue: XCTIssue) {
-    print("Issue recorded: \(issue)")
-    // Ignore issue or log as needed
-  }
-}
-
-final class maestro_driver_iosUITests: FailureResistantTestCase {
+final class maestro_driver_iosUITests: XCTestCase {
     private static let logger = Logger(
         subsystem: Bundle.main.bundleIdentifier!,
         category: "maestro_driver_iosUITests"

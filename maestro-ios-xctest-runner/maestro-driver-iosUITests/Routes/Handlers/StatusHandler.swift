@@ -13,6 +13,8 @@ struct StatusHandler: HTTPHandler {
     )
     
     func handleRequest(_ request: FlyingFox.HTTPRequest) async throws -> HTTPResponse {
+        
+        logger.error("=========== status was called")
         do {
             let statusResponse = StatusResponse(status: String(describing: Status.ok))
             let responseBody = try JSONEncoder().encode(statusResponse)

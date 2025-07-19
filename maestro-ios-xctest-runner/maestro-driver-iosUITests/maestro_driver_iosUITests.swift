@@ -3,7 +3,6 @@ import FlyingFox
 import os
 
 final class maestro_driver_iosUITests: XCTestCase {
-   
     private static let logger = Logger(
         subsystem: Bundle.main.bundleIdentifier!,
         category: "maestro_driver_iosUITests"
@@ -20,16 +19,18 @@ final class maestro_driver_iosUITests: XCTestCase {
     }
 
     override class func setUp() {
-        logger.trace("setUp")
+        logger.error("====== setUp")
     }
 
     func testHttpServer() async throws {
+        maestro_driver_iosUITests.logger.error("====== testHttpServer was called");
+
         let server = XCTestHTTPServer()
-        maestro_driver_iosUITests.logger.info("Will start HTTP server")
+        maestro_driver_iosUITests.logger.error("Will start HTTP server")
         try await server.start()
     }
 
     override class func tearDown() {
-        logger.trace("tearDown")
+        logger.error("tearDown")
     }
 }

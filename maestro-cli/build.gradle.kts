@@ -9,6 +9,7 @@ plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.jreleaser)
     alias(libs.plugins.shadow)
+    alias(libs.plugins.mavenPublish)
     alias(libs.plugins.kotlin.serialization)
 }
 
@@ -42,7 +43,7 @@ tasks.named<JavaExec>("run") {
 }
 
 tasks.named<CreateStartScripts>("startScripts") {
-    classpath = files("$buildDir/libs/*")
+    classpath = files("${layout.buildDirectory}/libs/*")
 }
 
 dependencies {
@@ -90,6 +91,10 @@ dependencies {
         }
         exclude(group = "org.slf4j", module = "slf4j-simple")
     }
+    implementation(libs.logging.sl4j)
+    implementation(libs.logging.api)
+    implementation(libs.logging.layout.template)
+    implementation(libs.log4j.core)
 
     testImplementation(libs.junit.jupiter.api)
     testRuntimeOnly(libs.junit.jupiter.engine)
@@ -98,13 +103,13 @@ dependencies {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 tasks.named("compileKotlin", KotlinCompilationTask::class.java) {
     compilerOptions {
-        freeCompilerArgs.addAll("-Xjdk-release=1.8")
+        freeCompilerArgs.addAll("-Xjdk-release=17")
     }
 }
 
@@ -143,6 +148,15 @@ tasks.named<Zip>("distZip") {
 
 tasks.named<Tar>("distTar") {
     archiveFileName.set("maestro.tar")
+}
+
+tasks.shadowJar {
+    setProperty("zip64", true)
+}
+
+mavenPublishing {
+    publishToMavenCentral(true)
+    signAllPublications()
 }
 
 jreleaser {
